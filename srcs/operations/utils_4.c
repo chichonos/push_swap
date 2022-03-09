@@ -6,7 +6,7 @@
 /*   By: mea <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 14:10:57 by mea               #+#    #+#             */
-/*   Updated: 2022/03/09 16:40:51 by mea              ###   ########.fr       */
+/*   Updated: 2022/03/09 17:47:47 by mea              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,10 @@ int	checksize(int size)
 	int	divider;
 
 	divider = 0;
-	if (size > 5 && size < 50)
+	if (size < 500)
 		divider = 5;
-	if (size >= 50 && size < 500)
-		divider = 8;
-	else if (size >= 500)
-		divider = 10;
+	else
+		divider = 12;
 	return (divider);
 }
 

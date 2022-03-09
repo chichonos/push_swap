@@ -6,7 +6,7 @@
 /*   By: mea <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 16:31:35 by mea               #+#    #+#             */
-/*   Updated: 2022/03/09 16:45:58 by mea              ###   ########.fr       */
+/*   Updated: 2022/03/09 16:58:54 by mea              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,19 +51,18 @@ int	main(int argc, char **argv)
 
 	stack_a = NULL;
 	stack_b = NULL;
-	if (argc > 1)
+	if (argc <= 1)
+		return (0);
+	if (argc == 2)
+		if (!parsing_one_arg(argv, &stack_a))
+			error_print(1);
+	if (argc > 2)
 	{
-		if (argc == 2)
-			if (!parsing_one_arg(argv, &stack_a))
-				error_print(1);
-		if (argc > 2)
+		while (argc > 1)
 		{
-			while (argc > 1)
-			{
-				if (!checkargs(argv[argc - 1]))
-					error_print(1);
-				stack_a = node_creation(ft_atoi(argv[argc-- - 1]), &stack_a);
-			}
+			if (!checkargs(argv[argc - 1]))
+				error_print(1);
+			stack_a = node_creation(ft_atoi(argv[argc-- - 1]), &stack_a);
 		}
 	}
 	if (checkdouble(stack_a))
