@@ -6,13 +6,13 @@
 /*   By: mea <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 14:10:57 by mea               #+#    #+#             */
-/*   Updated: 2022/03/09 14:28:40 by mea              ###   ########.fr       */
+/*   Updated: 2022/03/09 16:48:57 by mea              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-unsigned int	getdiff(t_stack **stack_a, t_stack **stack_b)
+unsigned int	getdiff(t_stack **stack_a, t_stack *stack_b)
 {
 	long int	result;
 	long int	stack_aa;
@@ -23,9 +23,9 @@ unsigned int	getdiff(t_stack **stack_a, t_stack **stack_b)
 	else
 		stack_aa = (*stack_a)->nb;
 	if ((*stack_a)->nb < 0)
-		stack_bb = (*stack_b)->nb * (-1);
+		stack_bb = stack_b->nb * (-1);
 	else
-		stack_bb = (*stack_b)->nb;
+		stack_bb = stack_b->nb;
 	if (stack_aa - stack_bb < 0)
 		result = (stack_aa - stack_bb) * (-1);
 	else

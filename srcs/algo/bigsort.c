@@ -6,7 +6,7 @@
 /*   By: mea <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 11:29:54 by mea               #+#    #+#             */
-/*   Updated: 2022/03/09 16:30:17 by mea              ###   ########.fr       */
+/*   Updated: 2022/03/09 16:48:16 by mea              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	bestmove(int minpos, t_stack **stack_b)
 	}
 }
 
-void	putitinthemiddle(t_stack **tmp, t_stack **stack_a, t_stack **stack_b, \
+void	putitinthemiddle(t_stack *tmp, t_stack **stack_a, t_stack **stack_b, \
 int pos)
 {
 	unsigned int	min;
@@ -41,13 +41,13 @@ int pos)
 	min = -1;
 	while (tmp != NULL)
 	{
-		if ((*tmp)->nb < (*stack_a)->nb && getdiff(stack_a, tmp) < min)
+		if (tmp->nb < (*stack_a)->nb && getdiff(stack_a, tmp) < min)
 		{
 			min = getdiff(stack_a, tmp);
 			minpos = pos;
 		}
 		pos++;
-		*tmp = (*tmp)->next;
+		tmp = tmp->next;
 	}
 	bestmove(minpos, stack_b);
 }
@@ -56,11 +56,11 @@ void	putitright(t_stack **stack_a, t_stack **stack_b, int min_b, int max_b)
 {
 	int		pos;
 	int		minpos;
-	t_stack	**tmp;
+	t_stack	*tmp;
 
 	pos = 0;
 	minpos = 0;
-	tmp = stack_b;
+	tmp = *stack_b;
 	if ((*stack_a)->nb > max_b)
 		move_to_top(stack_b, max_b);
 	else if ((*stack_a)->nb < min_b)

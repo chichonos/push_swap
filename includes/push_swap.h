@@ -6,7 +6,7 @@
 /*   By: mea <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 16:45:31 by mea               #+#    #+#             */
-/*   Updated: 2022/03/09 16:39:25 by mea              ###   ########.fr       */
+/*   Updated: 2022/03/09 16:54:47 by mea              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,7 @@ int				stacklen(t_stack **stack_a);
 void			printmyarray(int *arr, int size);
 int				*get_array_sorted(t_stack **stack_a, int *array, int size);
 int				get_max(int *arr, int size);
-void			countSort(int arr[], int n, int exp);
-void			radix_sort(int *arr, int size);
+void			countsort(int *arr, int sizeofarray, int digit);
 int				*copystackinarray(int *arr, t_stack **stack_a);
 int				*copynegnbinarray(int *arr, t_stack **stack_a);
 int				*copyposnbinarray(int *arr, t_stack **stack_a);
@@ -63,14 +62,14 @@ int max_b);
 void			move_to_top(t_stack **stack_b, int nbf);
 int				getmax(t_stack **stack);
 int				getpos(t_stack **stack, int nbf);
-unsigned int	getdiff(t_stack **stack_a, t_stack **stack_b);
+unsigned int	getdiff(t_stack **stack_a, t_stack *stack_b);
 int				findminpos(t_stack **stack_a);
 void			move_to_top(t_stack **stack_b, int nbf);
 void			ft_printstr(char *str, int nb);
 int				findmin(t_stack **stack_a);
 void			ft_printstr(char *str, int nb);
 int				getposnbtop(t_stack **stack, int nbfound);
-void			putitinthemiddle(t_stack **tmp, t_stack **stack_a, \
+void			putitinthemiddle(t_stack *tmp, t_stack **stack_a, \
 t_stack **stack_b, int pos);
 int				getposnbbot(t_stack **stack, int nbfound);
 void			sorting(t_stack **stack_a, t_stack **stack_b);
