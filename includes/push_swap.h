@@ -6,7 +6,7 @@
 /*   By: mea <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 16:45:31 by mea               #+#    #+#             */
-/*   Updated: 2022/03/09 14:53:55 by mea              ###   ########.fr       */
+/*   Updated: 2022/03/09 16:39:25 by mea              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,10 @@ void			bigsort(t_stack **stack_a, t_stack **stack_b, int size);
 void			sort_three(t_stack **stack_a);
 void			sort4and5(t_stack **stack_a, t_stack **stack_b);
 void			sort_above5(t_stack **stack_a, t_stack **stack_b);
-void			bestmove(minpos, stack_b);
+void			bestmove(int minpos, t_stack **stack_b);
+void			bubblesort(int *arr, int sizeofarray);
+int				sizeofmyposarray(t_stack **stack_a);
+int				sizeofmynegarray(t_stack **stack_a);
 
 void			swap_a(t_stack **stack);
 void			swap_b(t_stack **stack);

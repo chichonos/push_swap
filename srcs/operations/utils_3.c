@@ -6,7 +6,7 @@
 /*   By: mea <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 14:10:57 by mea               #+#    #+#             */
-/*   Updated: 2022/03/09 14:26:33 by mea              ###   ########.fr       */
+/*   Updated: 2022/03/09 16:41:39 by mea              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ int	*mergearrays(int *arr, int *arr2, int i, int j)
 	return (arrayfinal);
 }
 
-void	printmyarray(int *arr, int size)
+/*void	printmyarray(int *arr, int size)
 {
 	for (int i = 0; i < size; i++)
 		printf("%d ARRAY\n", arr[i]);
-}
+}*/
 
 void	ft_printstr(char *str, int nb)
 {
@@ -63,11 +63,11 @@ int	*get_array_sorted(t_stack **stack_a, int *arr, int size)
 		error_print(4);
 	arr = copyposnbinarray(arr, stack_a);
 	arr2 = copynegnbinarray(arr2, stack_a);
-	i = sizeofmyarray(arr);
-	j = sizeofmyarray(arr2);
+	i = sizeofmyposarray(stack_a);
+	j = sizeofmynegarray(stack_a);
 	arr2 = changesignofarray(arr2, j);
-	radix_sort(arr, i);
-	radix_sort(arr2, j);
+	bubblesort(arr, i);
+	bubblesort(arr2, j);
 	arr2 = changesignofarray(arr2, j);
 	arr = mergearrays(arr, arr2, i, j);
 	free(arr2);

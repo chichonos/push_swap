@@ -14,12 +14,12 @@ SRC_PARSING = $(addprefix srcs/parsing/, $(PARSING))
 OPERATIONS = utils.c utils_2.c utils_3.c utils_4.c utils_5.c manip.c manip_2.c manip_3.c 
 SRC_OP = $(addprefix srcs/operations/, $(OPERATIONS))
 
-ALGO = sort.c bigsort.c radix.c bigsort_utils.c
+ALGO = sort.c bigsort.c radix.c bigsort_utils.c bubblesort.c
 SRC_ALGO = $(addprefix srcs/algo/, $(ALGO))
 
 OBJ = *.o
 
-FLAGS = -Wextra -Wall -Werror -g
+FLAGS = -Wextra -Wall -Werror -g -fsanitize=address
 INCLUDE = includes
 
 NONE='\033[0m'

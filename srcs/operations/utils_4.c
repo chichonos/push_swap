@@ -6,7 +6,7 @@
 /*   By: mea <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 14:10:57 by mea               #+#    #+#             */
-/*   Updated: 2022/03/09 14:45:29 by mea              ###   ########.fr       */
+/*   Updated: 2022/03/09 16:40:51 by mea              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,16 +48,6 @@ int	*copynegnbinarray(int *arr, t_stack **stack_a)
 		tmp = tmp->next;
 	}
 	return (arr);
-}
-
-int	sizeofmyarray(int *arr)
-{
-	int	i;
-
-	i = 0;
-	while (arr[i])
-		i++;
-	return (i);
 }
 
 int	checksize(int size)

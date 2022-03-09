@@ -6,7 +6,7 @@
 /*   By: mea <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 14:10:57 by mea               #+#    #+#             */
-/*   Updated: 2022/03/09 14:23:42 by mea              ###   ########.fr       */
+/*   Updated: 2022/03/09 16:40:43 by mea              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,36 @@ int	*copyposnbinarray(int *arr, t_stack **stack_a)
 		tmp = tmp->next;
 	}
 	return (arr);
+}
+
+int	sizeofmyposarray(t_stack **stack_a)
+{
+	t_stack	*tmp;
+	int		i;
+
+	i = 0;
+	tmp = *stack_a;
+	while (tmp)
+	{
+		if (tmp->nb > 0)
+			i++;
+		tmp = tmp->next;
+	}
+	return (i);
+}
+
+int	sizeofmynegarray(t_stack **stack_a)
+{
+	t_stack	*tmp;
+	int		i;
+
+	i = 0;
+	tmp = *stack_a;
+	while (tmp)
+	{
+		if (tmp->nb < 0)
+			i++;
+		tmp = tmp->next;
+	}
+	return (i);
 }

@@ -6,13 +6,12 @@
 /*   By: mea <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 15:23:36 by mea               #+#    #+#             */
-/*   Updated: 2022/03/09 14:35:26 by mea              ###   ########.fr       */
+/*   Updated: 2022/03/09 16:19:56 by mea              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+/*#include "../../includes/push_swap.h"
 
-// A utility function to get maximum value in arr[]
 int	get_max(int arr[], int sizeofarray)
 {
 	int	mx;
@@ -29,19 +28,21 @@ int	get_max(int arr[], int sizeofarray)
 	return (mx);
 }
 
-// A function to do counting sort of arr[] according to
-// the digit represented by exp.
-void	countSort(int arr[], int sizeofarray, int exp)
+void	countSort(int *arr, int sizeofarray, int digit)
 {
-	int	output[sizeofarray]; // output array
-	int i;
-	int	count[10] = { 0 };
+	int	size;
+	int	*output;
+	int	i;
+	int	count[10];
 
+	output = malloc(sizeof(int) * sizeofarray);
+	if (!output)
+		error_print(4);	
+	
 	// Store count of occurrences in count[]
 	i = -1;
 	while (i < sizeofarray)
-		count[(arr[++i] / exp) % 10]++;
-
+		count[(arr[++i] / digit) % 10]++;
 	// Change count[i] so that count[i] now contains actual
 	// position of this digit in output[]
 	i = 0;
@@ -55,8 +56,8 @@ void	countSort(int arr[], int sizeofarray, int exp)
 	i = sizeofarray - 1;
 	while (i >= 0)
 	{
-		output[count[(arr[i] / exp) % 10] - 1] = arr[i];
-		count[(arr[i] / exp) % 10]--;
+		output[count[(arr[i] / digit) % 10] - 1] = arr[i];
+		count[(arr[i] / digit) % 10]--;
 		i--;
 	}
 
@@ -68,25 +69,25 @@ void	countSort(int arr[], int sizeofarray, int exp)
 		arr[i] = output[i];
 		i++;
 	}
+	free(output);
 }
 
-// The main function to that sorts arr[] of size n using
-// Radix Sort
-void radix_sort(int arr[], int sizeofarray)
+void	radix_sort(int arr[], int sizeofarray)
 {
-	int exp;
-	int m; 
+	int	digit;
+	int	nbofdigits; 
 
 	// Find the maximum number to know number of digits
-	exp = 1;
-	m = get_max(arr, sizeofarray);
+	digit = 1;
+	nbofdigits = get_max(arr, sizeofarray);
 
 	// Do counting sort for every digit. Note that instead
-	// of passing digit number, exp is passed. exp is 10^i
+	// of passing digit number, digit is passed. digit is 10^i
 	// where i is current digit number
-	while (m / exp > 0)
+	while (nbofdigits / digit > 0)
 	{
-		countSort(arr, sizeofarray, exp);
-		exp *= 10;
+		countSort(arr, sizeofarray, digit);
+		digit *= 10;
 	}
 }
+*/

@@ -6,13 +6,13 @@
 /*   By: mea <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 11:29:54 by mea               #+#    #+#             */
-/*   Updated: 2022/03/09 14:47:01 by mea              ###   ########.fr       */
+/*   Updated: 2022/03/09 16:30:17 by mea              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	bestmove(minpos, stack_b)
+void	bestmove(int minpos, t_stack **stack_b)
 {
 	if (minpos > stacklen(stack_b) / 2)
 	{

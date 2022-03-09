@@ -6,7 +6,7 @@
 /*   By: mea <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 16:31:35 by mea               #+#    #+#             */
-/*   Updated: 2022/03/09 14:53:25 by mea              ###   ########.fr       */
+/*   Updated: 2022/03/09 16:24:50 by mea              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ int	main(int argc, char **argv)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
+	stack_a = NULL;
+	stack_b = NULL;
 	if (argc > 1)
 	{
 		if (argc == 2)
