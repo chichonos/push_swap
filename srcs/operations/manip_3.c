@@ -6,7 +6,7 @@
 /*   By: mea <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 14:10:57 by mea               #+#    #+#             */
-/*   Updated: 2022/03/08 14:17:03 by mea              ###   ########.fr       */
+/*   Updated: 2022/03/09 14:29:37 by mea              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,12 @@ void	swap_all(t_stack **stack_a, t_stack **stack_b)
 	int	tmp2;
 
 	if (stacklen(stack_a) <= 1)
-		return;
+		return ;
 	tmp = (*stack_a)->nb;
 	(*stack_a)->nb = (*stack_a)->next->nb;
 	(*stack_a)->next->nb = tmp;
 	if (stacklen(stack_b) <= 1)
-		return;
+		return ;
 	tmp2 = (*stack_b)->nb;
 	(*stack_b)->nb = (*stack_b)->next->nb;
 	(*stack_b)->next->nb = tmp2;

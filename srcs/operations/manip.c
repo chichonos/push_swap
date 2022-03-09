@@ -17,7 +17,7 @@ void	swap_a(t_stack **stack)
 	int	tmp;
 
 	if (stacklen(stack) <= 1)
-		return;
+		return ;
 	tmp = (*stack)->nb;
 	(*stack)->nb = (*stack)->next->nb;
 	(*stack)->next->nb = tmp;
@@ -29,7 +29,7 @@ void	swap_b(t_stack **stack)
 	int	tmp;
 
 	if (stacklen(stack) <= 1)
-		return;
+		return ;
 	tmp = (*stack)->nb;
 	(*stack)->nb = (*stack)->next->nb;
 	(*stack)->next->nb = tmp;

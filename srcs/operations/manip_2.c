@@ -6,7 +6,7 @@
 /*   By: mea <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 14:15:41 by mea               #+#    #+#             */
-/*   Updated: 2022/03/08 14:17:11 by mea              ###   ########.fr       */
+/*   Updated: 2022/03/09 14:29:53 by mea              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	push_b(t_stack **stack_a, t_stack **stack_b)
 	t_stack	*tmp;
 
 	if (!*stack_a)
-		return;
+		return ;
 	tmp = (*stack_a)->next;
 	(*stack_a)->next = (*stack_b);
 	(*stack_b) = (*stack_a);
@@ -65,5 +65,3 @@ void	rotate_b(t_stack **stack)
 	tmp->next = NULL;
 	write(1, "rb\n", 3);
 }
-
-

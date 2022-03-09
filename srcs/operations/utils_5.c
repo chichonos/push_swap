@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_2.c                                          :+:      :+:    :+:   */
+/*   utils_5.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mea <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 14:10:57 by mea               #+#    #+#             */
-/*   Updated: 2022/03/08 14:17:03 by mea              ###   ########.fr       */
+/*   Updated: 2022/03/09 14:23:42 by mea              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int *copyposnbinarray(int *arr, t_stack **stack_a)
+int	*copyposnbinarray(int *arr, t_stack **stack_a)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 	int		i;
 
 	i = 0;

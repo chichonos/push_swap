@@ -6,7 +6,7 @@
 /*   By: mea <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 14:10:57 by mea               #+#    #+#             */
-/*   Updated: 2022/03/08 14:17:03 by mea              ###   ########.fr       */
+/*   Updated: 2022/03/09 14:28:40 by mea              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ unsigned int	getdiff(t_stack **stack_a, t_stack **stack_b)
 
 int	findminpos(t_stack **stack_a)
 {
-	int min;
-	int minpos;
-	int i;
-	t_stack *tmp;
+	int		min;
+	int		minpos;
+	int		i;
+	t_stack	*tmp;
 
 	i = 0;
 	tmp = *stack_a;
@@ -59,9 +59,9 @@ int	findminpos(t_stack **stack_a)
 
 int	findmin(t_stack **stack_a)
 {
-	int min;
-	int i;
-	t_stack *tmp;
+	int		min;
+	int		i;
+	t_stack	*tmp;
 
 	i = 0;
 	tmp = *stack_a;
@@ -95,7 +95,8 @@ int	morenbinstack(t_stack **stack_a, int nbf)
 
 int	*changesignofarray(int *arr, int size)
 {
-	int i;
+	int	i;
+
 	i = 0;
 	while (i < size)
 	{

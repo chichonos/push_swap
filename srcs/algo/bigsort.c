@@ -6,16 +6,37 @@
 /*   By: mea <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 11:29:54 by mea               #+#    #+#             */
-/*   Updated: 2022/03/08 13:47:44 by mea              ###   ########.fr       */
+/*   Updated: 2022/03/09 14:47:01 by mea              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
+void	bestmove(minpos, stack_b)
+{
+	if (minpos > stacklen(stack_b) / 2)
+	{
+		while (minpos < stacklen(stack_b))
+		{
+			rotate_reverse_b(stack_b, "rrb");
+			minpos++;
+		}
+	}
+	else
+	{
+		while (minpos != 0)
+		{
+			rotate_b(stack_b);
+			minpos--;
+		}
+	}
+}
 
-void	putitinthemiddle(t_stack **tmp, t_stack **stack_a, t_stack **stack_b, int minpos, int pos)
+void	putitinthemiddle(t_stack **tmp, t_stack **stack_a, t_stack **stack_b, \
+int pos)
 {
 	unsigned int	min;
+	int				minpos;
 
 	min = -1;
 	while (tmp != NULL)
@@ -28,27 +49,15 @@ void	putitinthemiddle(t_stack **tmp, t_stack **stack_a, t_stack **stack_b, int m
 		pos++;
 		*tmp = (*tmp)->next;
 	}
-//avec l'index on calcule si c'est plus rapide par le bas ou par le haut.
-	if (minpos > stacklen(stack_b) / 2)
-		while (minpos < stacklen(stack_b))
-		{
-			rotate_reverse_b(stack_b, "rrb");
-			minpos++;
-		}
-	else
-		while (minpos != 0)
-		{
-			rotate_b(stack_b);
-			minpos--;
-		}
+	bestmove(minpos, stack_b);
 }
 
 void	putitright(t_stack **stack_a, t_stack **stack_b, int min_b, int max_b)
 {
-	int 			pos;
-	int 			minpos;
+	int		pos;
+	int		minpos;
 	t_stack	**tmp;
-	
+
 	pos = 0;
 	minpos = 0;
 	tmp = stack_b;
@@ -57,7 +66,7 @@ void	putitright(t_stack **stack_a, t_stack **stack_b, int min_b, int max_b)
 	else if ((*stack_a)->nb < min_b)
 		move_to_top(stack_b, max_b);
 	else
-		putitinthemiddle(tmp, stack_a, stack_b, minpos, pos);
+		putitinthemiddle(tmp, stack_a, stack_b, pos);
 }
 
 void	bigsort(t_stack **stack_a, t_stack **stack_b, int size)
@@ -66,7 +75,7 @@ void	bigsort(t_stack **stack_a, t_stack **stack_b, int size)
 	int		nbfound;
 	int		chunck;
 	int		divider;
-	
+
 	size = stacklen(stack_a);
 	arr = malloc(sizeof(int) * size);
 	if (!arr)
@@ -79,7 +88,7 @@ void	bigsort(t_stack **stack_a, t_stack **stack_b, int size)
 		nbfound = calculebestnb(size, divider, chunck, arr);
 		while (morenbinstack(stack_a, nbfound))
 			bestchoice(stack_a, stack_b, nbfound);
-		chunck += (size/divider);
+		chunck += (size / divider);
 	}
 	push_b(stack_a, stack_b);
 	free(arr);

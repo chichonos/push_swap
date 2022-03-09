@@ -6,21 +6,20 @@
 /*   By: mea <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 15:23:36 by mea               #+#    #+#             */
-/*   Updated: 2022/02/28 15:41:25 by mea              ###   ########.fr       */
+/*   Updated: 2022/03/09 14:35:26 by mea              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
 // A utility function to get maximum value in arr[]
-int get_max(int arr[], int sizeofarray)
+int	get_max(int arr[], int sizeofarray)
 {
-	int mx;
-	int i;
-	
+	int	mx;
+	int	i;
+
 	mx = arr[0];
 	i = 0;
-
 	while (i < sizeofarray)
 	{
 		if (arr[i] > mx)
@@ -32,10 +31,11 @@ int get_max(int arr[], int sizeofarray)
 
 // A function to do counting sort of arr[] according to
 // the digit represented by exp.
-void countSort(int arr[], int sizeofarray, int exp)
+void	countSort(int arr[], int sizeofarray, int exp)
 {
-	int output[sizeofarray]; // output array
-	int i, count[10] = { 0 };
+	int	output[sizeofarray]; // output array
+	int i;
+	int	count[10] = { 0 };
 
 	// Store count of occurrences in count[]
 	i = -1;
