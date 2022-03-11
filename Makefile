@@ -19,7 +19,7 @@ SRC_ALGO = $(addprefix srcs/algo/, $(ALGO))
 
 OBJ = *.o
 
-FLAGS = -Wextra -Wall -Werror -g -fsanitize=address
+FLAGS = -Wextra -Wall -Werror -g
 INCLUDE = includes
 
 NONE='\033[0m'
