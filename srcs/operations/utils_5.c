@@ -6,7 +6,7 @@
 /*   By: mea <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 14:10:57 by mea               #+#    #+#             */
-/*   Updated: 2022/03/09 16:40:43 by mea              ###   ########.fr       */
+/*   Updated: 2022/03/11 09:52:50 by mea              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	sizeofmyposarray(t_stack **stack_a)
 	tmp = *stack_a;
 	while (tmp)
 	{
-		if (tmp->nb > 0)
+		if (tmp->nb >= 0)
 			i++;
 		tmp = tmp->next;
 	}

@@ -6,7 +6,7 @@
 /*   By: mea <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 14:10:57 by mea               #+#    #+#             */
-/*   Updated: 2022/03/09 17:47:47 by mea              ###   ########.fr       */
+/*   Updated: 2022/03/11 09:45:06 by mea              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	calculebestnb(int size, int divider, int chunck, int *arr)
 {
 	int	nbfound;
 
-	if ((size / divider + chunck - 1) > size)
+	if ((size / divider + chunck - 1) >= size)
 		nbfound = arr[size - 1];
 	else
 		nbfound = arr[(size / divider) + chunck - 1];
